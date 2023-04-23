@@ -37,7 +37,7 @@ const PokemonContainer = () => {
     //     })
     //     const pokemonsDetails = await Promise.all(pokemonsPromise)
     //     setPokemons(pokemonsDetails)
-    }
+    // }
 
     // const getPokemonsDetails = async function () {
     //     const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
