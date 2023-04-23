@@ -1,0 +1,9 @@
+.pokemon-details {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.bigsprite {
+    padding: 10px;
+}
