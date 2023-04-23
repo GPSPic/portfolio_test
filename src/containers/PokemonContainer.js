@@ -9,34 +9,34 @@ const PokemonContainer = () => {
     const [selectedPokemon, setSelectedPokemon] = useState(null)
     const [pokemonTeam, setPokemonTeam] = useState([])
 
-    // const getPokemons = () => {
-    //     fetch('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             const pokemonDetailsPromise = data.results.map(pokemon => {
-    //                 return fetch(pokemon.url)
-    //                     .then(res => res.json())
-    //             })
-    //         Promise.all(pokemonDetailsPromise)
-    //             .then(pokemonDetails => setPokemons(pokemonDetails))
-    //     })
-    // }
-
-    const getPokemonsUrls = async function () {
-        const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
-        const pokemonsUrlsData = await res.json()
-        return pokemonsUrlsData
+    const getPokemons = () => {
+        fetch('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
+            .then(res => res.json())
+            .then(data => {
+                const pokemonDetailsPromise = data.results.map(pokemon => {
+                    return fetch(pokemon.url)
+                        .then(res => res.json())
+                })
+            Promise.all(pokemonDetailsPromise)
+                .then(pokemonDetails => setPokemons(pokemonDetails))
+        })
     }
 
-    const getPokemonsDetailsFromUrls = async function () {
-        const baseArray = await getPokemonsUrls()
-        const pokemonsPromise = await baseArray.results.map(async (pokemon) => {
-            const promiseRes = await fetch(pokemon.url)
-            const promiseData = await promiseRes.json()
-            return promiseData
-        })
-        const pokemonsDetails = await Promise.all(pokemonsPromise)
-        setPokemons(pokemonsDetails)
+    // const getPokemonsUrls = async function () {
+    //     const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
+    //     const pokemonsUrlsData = await res.json()
+    //     return pokemonsUrlsData
+    // }
+
+    // const getPokemonsDetailsFromUrls = async function () {
+    //     const baseArray = await getPokemonsUrls()
+    //     const pokemonsPromise = await baseArray.results.map(async (pokemon) => {
+    //         const promiseRes = await fetch(pokemon.url)
+    //         const promiseData = await promiseRes.json()
+    //         return promiseData
+    //     })
+    //     const pokemonsDetails = await Promise.all(pokemonsPromise)
+    //     setPokemons(pokemonsDetails)
     }
 
     // const getPokemonsDetails = async function () {
@@ -54,7 +54,7 @@ const PokemonContainer = () => {
 
 
     useEffect(() => {
-        getPokemonsDetailsFromUrls();
+        getPokemons()
     }, []);
 
     const onSelectedPokemon = function(pokemon) {
