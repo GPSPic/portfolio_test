@@ -1,7 +1,0 @@
-li {
-    text-align: center;
-}
-
-li.clickable-list:hover {
-    cursor: pointer;
-}
