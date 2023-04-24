@@ -81,7 +81,7 @@ const PokemonContainer = () => {
             <div className="list-details">
                 {pokemons ? 
                     <PokemonList pokemons={pokemons} onSelectedPokemon={onSelectedPokemon}/> : 
-                    <p>Oh, oh! Could not retrieve information from the database!</p>} 
+                    <p>Please wait, we are loading information from the database...</p>} 
                     {selectedPokemon ? 
                         <PokemonDetails 
                         selectedPokemon={selectedPokemon}

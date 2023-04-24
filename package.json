@@ -1,4 +1,5 @@
 {
+  "homepage": "https://gpspic.github.io/portfolio_test",
   "name": "portfolio_test",
   "version": "0.1.0",
   "private": false,
@@ -11,8 +12,7 @@
     "react-google-charts": "^4.0.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.9",
-    "web-vitals": "^2.1.4",
-    "homepage": "https://gpspic.github.io/portfolio_test"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
